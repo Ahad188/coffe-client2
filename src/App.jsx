@@ -1,4 +1,5 @@
   
+import {  Link, Outlet } from 'react-router-dom'
 import './App.css'
 
 function App() {
@@ -6,16 +7,17 @@ function App() {
 
   return (
     <>
-      <h3 className='text-3xl text-center text-red-600'>hello coffee we side</h3>
-     <div className="hero min-h-screen bg-base-200">
-  <div className="hero-content text-center">
-    <div className="max-w-md">
-      <h1 className="text-5xl font-bold">Hello there</h1>
-      <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-      <button className="btn btn-primary">Get Started</button>
+    <div className='w-full border border-red-600'>
+      <ul className='flex gap-2 text-center justify-between mx-11'>
+        <Link to='/addcoffee'>add coffe</Link>
+        {/* <a href='/addcoffee'>add coffe</a> */}
+        <Link to='/updatecoffee'>update Coffe</Link>
+        {/* <Link to=''>updatecoffee</Link> */}
+         
+      </ul>
     </div>
-  </div>
-</div>
+      <h3 className='text-3xl text-center text-red-600'>hello coffee we side</h3>
+       <Outlet></Outlet>
     </>
   )
 }
