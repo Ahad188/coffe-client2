@@ -1,4 +1,5 @@
- import Swal from 'sweetalert2';
+ import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const CoffeeCard = ({coffee}) => {
     const {_id,name, quantity, supply, test, category, details, photo} = coffee;
@@ -26,7 +27,7 @@ const CoffeeCard = ({coffee}) => {
             })
               .then((res) => res.json())
               .then((data) => {
-                console.log(data);
+                // console.log(data);
                 if(data.deletedCount > 0){
                   Swal.fire({
                     title: "Deleted!",
@@ -54,9 +55,12 @@ const CoffeeCard = ({coffee}) => {
               <p>{category}</p>
             </div>
             <div className="card-actions justify-end">
+              <Link to={`/updatecoffee/${_id}`} className="btn btn-primary">
+                Update
+              </Link>
               <button className="btn btn-primary">Buy Now</button>
               <button
-                 onClick={()=>handelCoffeeDelete(_id)}
+                onClick={() => handelCoffeeDelete(_id)}
                 className="btn btn-primary"
               >
                 Delete

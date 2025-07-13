@@ -6,7 +6,7 @@ import CoffeeCard from './Components/CoffeeCard/CoffeeCard'
 function App() {
  
 const coffees = useLoaderData()
-console.log(coffees)
+// console.log(coffees)
   return (
     <>
       <div className="w-full border border-red-600">
